@@ -50,15 +50,15 @@ class TheInputField extends StatelessWidget {
       ),
       child: TextFormField(
         controller: theEditingController,
-        // validator: theValidator,
 
-// onSubmitted: ,
+        // validator: theValidator,
+        // onSubmitted: ,
         // key: theKey,
         // controller: theTextEditingController,
 
         keyboardType: theInputType,
-        obscureText: isPassword == false ? false : true,
-        style: Theme.of(context).textTheme.bodyText1,
+        obscureText: isPassword,
+        // style: Theme.of(context).textTheme.bodyText1,
         decoration: InputDecoration(
           fillColor: AppColor.kPrimaryColor.withOpacity(.2),
           border: InputBorder.none,

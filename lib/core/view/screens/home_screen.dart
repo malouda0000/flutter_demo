@@ -228,6 +228,7 @@ class _searchFeiald extends StatelessWidget {
         ),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         textDirection: TextDirection.rtl,
         children: [
           SvgPicture.asset(
@@ -235,6 +236,7 @@ class _searchFeiald extends StatelessWidget {
           ),
           Expanded(
             child: TextFormField(
+              textDirection: TextDirection.rtl,
               // validator: theValidator,
               // onSubmitted: ,
               // key: theKey,
@@ -244,7 +246,7 @@ class _searchFeiald extends StatelessWidget {
               decoration: InputDecoration(
                 // fillColor: AppColor.kPrimaryColor.withOpacity(.2),
                 border: InputBorder.none,
-                hintText: 'ابحث عن طلبك...',
+                hintText: 'ابحث عن طلبك',
                 hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
                       color: AppColor.kLightTextColor,
                     ),
@@ -255,6 +257,8 @@ class _searchFeiald extends StatelessWidget {
             ),
           ),
           Spacer(),
+          Spacer(),
+          // Spacer(),
         ],
       ),
     );
