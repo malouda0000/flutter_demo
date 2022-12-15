@@ -54,14 +54,18 @@ class SingInScreen extends StatelessWidget {
                       ),
                 ),
                 emptySpace,
-                TheInputField(
-                  // user name
-                  theHient: 'محمد احمد صالح سعيد',
-                  theEditingController: userNaEditingController!,
-                  isPassword: false,
-                  theBorderColor: AppColor.kPrimaryColor,
-                  theInputType: TextInputType.text,
-                  theRadus: theDefaultRaduis,
+                // TheInputField(
+                //   // user name
+                //   theHient: 'محمد احمد صالح سعيد',
+                //   theEditingController: userNaEditingController!,
+                //   isPassword: false,
+                //   theBorderColor: AppColor.kPrimaryColor,
+                //   theInputType: TextInputType.text,
+                //   theRadus: theDefaultRaduis,
+                // ),
+
+                CustomFormFiea(
+                  theHintText: 'ابحث عن طلبك',
                 ),
                 emptySpace,
                 emptySpace,
@@ -72,15 +76,9 @@ class SingInScreen extends StatelessWidget {
                       ),
                 ),
                 emptySpace,
-                TheInputField(
-                  // phone num
-                  theHient: 'محمد احمد صالح سعيد',
-                  theEditingController: phoneNumEditingController!,
 
-                  isPassword: false,
-                  theBorderColor: AppColor.kPrimaryColor,
-                  theInputType: TextInputType.text,
-                  theRadus: theDefaultRaduis,
+                CustomFormFiea(
+                  theHintText: 'ادخل رقم هاتفك',
                 ),
                 emptySpace,
                 emptySpace,
@@ -91,27 +89,13 @@ class SingInScreen extends StatelessWidget {
                       ),
                 ),
                 emptySpace,
-                TheInputField(
-                  // password
-                  theHient: 'كلمة السر',
-                  theEditingController: passwordEditingController!,
-
-                  isPassword: false,
-                  theBorderColor: AppColor.kPrimaryColor,
-                  theInputType: TextInputType.text,
-                  theRadus: theDefaultRaduis,
+                CustomFormFiea(
+                  theHintText: 'ادخل كلمة السر',
                 ),
                 emptySpace,
                 emptySpace,
-                TheInputField(
-                  // repassword
-                  theHient: 'تاكيد كلمة السر',
-                  theEditingController: repasswordEditingController!,
-
-                  isPassword: false,
-                  theInputType: TextInputType.text,
-                  theBorderColor: AppColor.kPrimaryColor,
-                  theRadus: theDefaultRaduis,
+                CustomFormFiea(
+                  theHintText: 'تاكيد كلمة السر',
                 ),
                 SizedBox(
                   height: 42,
@@ -169,33 +153,82 @@ class SingInScreen extends StatelessWidget {
   }
 }
 
-// class _customFormFiea extends StatelessWidget {
-//   const _customFormFiea({super.key});
+class CustomFormFiea extends StatelessWidget {
+  final String? theHintText;
+  static bool isActive = false;
+  const CustomFormFiea({super.key, this.theHintText});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      padding: EdgeInsets.symmetric(horizontal: theSmallPadding),
+      decoration: BoxDecoration(
+        border: Border.all(
+          // color: isActive ? AppColor.kPrimaryColor : AppColor.kLightTextColor,
+          color: AppColor.kPrimaryColor,
+        ),
+        borderRadius: BorderRadius.circular(
+          theDefaultRaduis,
+        ),
+      ),
+      child: Expanded(
+        child: TextFormField(
+          // textAlign: TextAlign.,
+          textDirection: TextDirection.rtl,
+          // validator: theValidator,
+          // onSubmitted: ,
+          // key: theKey,
+          onTap: () {
+            isActive = true;
+          },
+          onChanged: (Value) {
+            isActive = false;
+          },
+          controller: serchTextEditingController,
+          keyboardType: TextInputType.text,
+          style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                fontWeight: FontWeight.w500,
+                color: Colors.black,
+              ),
+          // showCursor: false,
+          cursorColor: AppColor.kPrimaryColor,
+          // cursorHeight: 10,
+
+          decoration: InputDecoration(
+            // fillColor: AppColor.kinputformFillColor,
+            hintTextDirection: TextDirection.rtl,
+
+            border: InputBorder.none,
+            hintText: theHintText,
+            hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
+                  color: AppColor.kLightTextColor,
+                ),
+            // hintStyle: TextStyle(
+            //   color: Colors.black,
+            // ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// class _customFormFiea extends StatefulWidget {
+//   final String? theHintText;
+//   const _customFormFiea({super.key, required this.theHintText});
+
+//   @override
+
+  
+//   State<_customFormFiea> createState() => _customFormFieaState();
+// }
+
+// class _customFormFieaState extends State<_customFormFiea> {
+//   static bool isActive = false;
 
 //   @override
 //   Widget build(BuildContext context) {
-//     return 
-//           Expanded(
-//             child: TextFormField(
-//               textDirection: TextDirection.rtl,
-//               // validator: theValidator,
-//               // onSubmitted: ,
-//               // key: theKey,
-//               controller: serchTextEditingController,
-//               keyboardType: TextInputType.text,
-//               style: Theme.of(context).textTheme.bodyText1,
-//               decoration: InputDecoration(
-//                 // fillColor: AppColor.kPrimaryColor.withOpacity(.2),
-//                 border: InputBorder.none,
-//                 hintText: 'ابحث عن طلبك',
-//                 hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
-//                       color: AppColor.kLightTextColor,
-//                     ),
-//                 // hintStyle: TextStyle(
-//                 //   color: Colors.black,
-//                 // ),
-//               ),
-//             ),
-//           );
+//     return ;
 //   }
 // }

@@ -55,6 +55,8 @@ class TheInputField extends StatelessWidget {
         // onSubmitted: ,
         // key: theKey,
         // controller: theTextEditingController,
+        showCursor: false,
+        cursorColor: AppColor.kPrimaryColor,
 
         keyboardType: theInputType,
         obscureText: isPassword,

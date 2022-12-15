@@ -234,6 +234,9 @@ class _searchFeiald extends StatelessWidget {
           SvgPicture.asset(
             AppImages.searchSvg,
           ),
+          SizedBox(
+            width: 10,
+          ),
           Expanded(
             child: TextFormField(
               textDirection: TextDirection.rtl,
@@ -245,6 +248,8 @@ class _searchFeiald extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyText1,
               decoration: InputDecoration(
                 // fillColor: AppColor.kPrimaryColor.withOpacity(.2),
+                hintTextDirection: TextDirection.rtl,
+
                 border: InputBorder.none,
                 hintText: 'ابحث عن طلبك',
                 hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
