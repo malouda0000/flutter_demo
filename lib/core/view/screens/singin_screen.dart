@@ -3,6 +3,7 @@ import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/app_images.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
 import 'package:flutter_demo/core/shared/big_button.dart';
+import 'package:flutter_demo/core/shared/custom_form_fieal.dart';
 import 'package:flutter_demo/core/view/screens/home_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -62,8 +63,10 @@ class SingInScreen extends StatelessWidget {
                 //   theRadus: theDefaultRaduis,
                 // ),
 
-                const CustomFormFiea(
-                  theHintText: 'ابحث عن طلبك',
+                CustomFormFiea(
+                  // user name text
+                  theHintText: 'محمد احمد صالح سعيد',
+                  textEditingController: userNaEditingController,
                 ),
                 emptySpace,
                 emptySpace,
@@ -75,8 +78,9 @@ class SingInScreen extends StatelessWidget {
                 ),
                 emptySpace,
 
-                const CustomFormFiea(
+                CustomFormFiea(
                   theHintText: 'ادخل رقم هاتفك',
+                  textEditingController: phoneNumEditingController,
                 ),
                 emptySpace,
                 emptySpace,
@@ -87,13 +91,15 @@ class SingInScreen extends StatelessWidget {
                       ),
                 ),
                 emptySpace,
-                const CustomFormFiea(
+                CustomFormFiea(
                   theHintText: 'ادخل كلمة السر',
+                  textEditingController: passwordEditingController,
                 ),
                 emptySpace,
                 emptySpace,
-                const CustomFormFiea(
+                CustomFormFiea(
                   theHintText: 'تاكيد كلمة السر',
+                  textEditingController: repasswordEditingController,
                 ),
                 const SizedBox(
                   height: 42,
@@ -149,69 +155,6 @@ class SingInScreen extends StatelessWidget {
           ),
         ),
       )),
-    );
-  }
-}
-
-class CustomFormFiea extends StatelessWidget {
-  final String? theHintText;
-  static bool isActive = false;
-  const CustomFormFiea({super.key, this.theHintText});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      clipBehavior: Clip.hardEdge,
-      height: 50,
-      width: Get.width - (theDefaultPadding * 2),
-      padding: const EdgeInsets.symmetric(horizontal: theSmallPadding),
-      decoration: BoxDecoration(
-        border: Border.all(
-          // color: isActive ? AppColor.kPrimaryColor : AppColor.kLightTextColor,
-          color: AppColor.kPrimaryColor,
-        ),
-        borderRadius: BorderRadius.circular(
-          theDefaultRaduis,
-        ),
-      ),
-      child: Expanded(
-        child: TextFormField(
-          // textAlign: TextAlign.,
-          textDirection: TextDirection.rtl,
-          // validator: theValidator,
-          // onSubmitted: ,
-          // key: theKey,
-          onTap: () {
-            isActive = true;
-          },
-          onChanged: (Value) {
-            isActive = false;
-          },
-          controller: serchTextEditingController,
-          keyboardType: TextInputType.text,
-          style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                fontWeight: FontWeight.w500,
-                color: Colors.black,
-              ),
-          // showCursor: false,
-          cursorColor: AppColor.kPrimaryColor,
-          // cursorHeight: 10,
-
-          decoration: InputDecoration(
-            // fillColor: AppColor.kinputformFillColor,
-            hintTextDirection: TextDirection.rtl,
-
-            border: InputBorder.none,
-            hintText: theHintText,
-            hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
-                  color: AppColor.kLightTextColor,
-                ),
-            // hintStyle: TextStyle(
-            //   color: Colors.black,
-            // ),
-          ),
-        ),
-      ),
     );
   }
 }
