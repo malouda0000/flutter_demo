@@ -1,49 +1,69 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
+import 'package:flutter_demo/core/controller/signin_controller.dart';
 import 'package:get/get.dart';
 
 class CustomFormFiea extends StatelessWidget {
   final TextEditingController? textEditingController;
   final String? theHintText;
-  static bool isActive = false;
+  final TextInputType? theTextInputType;
+  final int theIndex;
   const CustomFormFiea(
-      {super.key, this.theHintText, this.textEditingController});
+      {super.key,
+      this.theHintText,
+      this.textEditingController,
+      required this.theIndex,
+      this.theTextInputType});
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-        controller: textEditingController,
-        // textDirection: TextDirection.rtl,
-        textAlign: TextAlign.end,
-        cursorColor: AppColor.kPrimaryColor,
-        onTap: () {},
-        autofocus: true,
-        keyboardType: TextInputType.text,
-        style: Theme.of(context).textTheme.bodyText1!.copyWith(
-              fontWeight: FontWeight.w500,
-              color: Colors.black,
+    SigninControllerImp signinControllerImp = Get.put(SigninControllerImp());
+    return GetBuilder<SigninControllerImp>(builder: (
+      context,
+    ) {
+      return TextFormField(
+          controller: textEditingController,
+          // textDirection: TextDirection.rtl,
+          textAlign: TextAlign.end,
+          cursorColor: AppColor.kPrimaryColor,
+          // onTap: () {
+          //   signinControllerImp.onFocuesd(theIndex);
+          // },
+          onChanged: (value) {
+            signinControllerImp.changeFillColor(value, theIndex);
+          },
+          autofocus: false,
+          keyboardType: theTextInputType ?? TextInputType.text,
+          style:
+              const TextStyle(fontWeight: FontWeight.w500, color: Colors.black),
+          decoration: InputDecoration(
+            filled: true,
+            // fillColor: Theme.of(context).scaffoldBackgroundColor,
+            fillColor: signinControllerImp.isItActivList[theIndex]
+                ? AppColor.kinputformFillColor
+                : Colors.white,
+
+            // fillColor: AppColor.kinputformFillColor,
+
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(theSmallPadding),
             ),
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: Theme.of(context).scaffoldBackgroundColor,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(theSmallPadding),
-          ),
-          // focusedBorder: OutlineInputBorder(),
-          // focusColor: AppColor.kinputformFillColor,
-          // focusColor: AppColor.kPrimaryColor,
-          //  focusedBorder: InputBorder,
+            // focusedBorder: OutlineInputBorder(),
+            // focusColor: AppColor.kinputformFillColor,
+            // focusColor: AppColor.kPrimaryColor,
+            //  focusedBorder: InputBorder,
 
-          hintText: theHintText,
-          // hintStyle: TextStyle()
+            hintText: theHintText,
+            // hintStyle: TextStyle()
 
-          // focusedBorder: OutlineInputBorder(
-          //   borderSide:
-          //       const BorderSide(color: AppColor.kPrimaryColor, width: 2.0),
-          //   // borderRadius: BorderRadius.circular(25.0),
-          // ),
-        ));
+            // focusedBorder: OutlineInputBorder(
+            //   borderSide:
+            //       const BorderSide(color: AppColor.kPrimaryColor, width: 2.0),
+            //   // borderRadius: BorderRadius.circular(25.0),
+            // ),
+          ));
+    });
   }
 }
 

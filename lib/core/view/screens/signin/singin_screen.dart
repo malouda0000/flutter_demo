@@ -22,16 +22,13 @@ class SingInScreen extends StatelessWidget {
       body: SafeArea(
           child: ListView(shrinkWrap: true, children: [
         Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: theDefaultPadding,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: theDefaultPadding),
           child: Form(
+            // signIn form
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                const SizedBox(
-                  height: 84,
-                ),
+                const SizedBox(height: 84),
                 Center(
                   child: SvgPicture.asset(
                     // i have used svg images for better qualty
@@ -41,14 +38,14 @@ class SingInScreen extends StatelessWidget {
                 const SizedBox(
                   height: 42,
                 ),
-                const _lableBuilder(
-                  lable: "الاسم",
-                ),
+                const _lableBuilder(lable: "الاسم"),
                 emptySpace,
                 CustomFormFiea(
                   // user name text
-                  theHintText: 'محمد احمد صالح سعيد',
+                  theHintText: 'الاسم',
                   textEditingController: userNaEditingController,
+                  theTextInputType: TextInputType.text,
+                  theIndex: 0,
                 ),
 
                 //
@@ -61,6 +58,10 @@ class SingInScreen extends StatelessWidget {
                 CustomFormFiea(
                   theHintText: 'ادخل رقم هاتفك',
                   textEditingController: phoneNumEditingController,
+                  theTextInputType: const TextInputType.numberWithOptions(
+                    decimal: false,
+                  ),
+                  theIndex: 1,
                 ),
 
                 //
@@ -73,12 +74,16 @@ class SingInScreen extends StatelessWidget {
                 CustomFormFiea(
                   theHintText: 'ادخل كلمة السر',
                   textEditingController: passwordEditingController,
+                  theTextInputType: TextInputType.text,
+                  theIndex: 2,
                 ),
                 emptySpace,
                 emptySpace,
                 CustomFormFiea(
                   theHintText: 'تاكيد كلمة السر',
                   textEditingController: repasswordEditingController,
+                  theTextInputType: TextInputType.text,
+                  theIndex: 3,
                 ),
                 const SizedBox(
                   height: 42,
@@ -119,7 +124,7 @@ class SingInScreen extends StatelessWidget {
                 emptySpace,
                 emptySpace,
 
-                const _creatAccountButton(),
+                const CreatAccountButton(),
                 emptySpace,
                 emptySpace,
               ],
@@ -131,8 +136,8 @@ class SingInScreen extends StatelessWidget {
   }
 }
 
-class _creatAccountButton extends StatelessWidget {
-  const _creatAccountButton({
+class CreatAccountButton extends StatelessWidget {
+  const CreatAccountButton({
     Key? key,
   }) : super(key: key);
 
