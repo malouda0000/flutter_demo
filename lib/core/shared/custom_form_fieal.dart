@@ -24,6 +24,9 @@ class CustomFormFiea extends StatelessWidget {
     ) {
       return TextFormField(
           controller: textEditingController,
+          onEditingComplete: () {
+            signinControllerImp.editingCompleted(theIndex);
+          },
           // textDirection: TextDirection.rtl,
           textAlign: TextAlign.end,
           cursorColor: AppColor.kPrimaryColor,

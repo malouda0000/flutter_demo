@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class SigninController extends GetxController {
   onFocuesd(int index);
+  editingCompleted(int index);
   changeFillColor(String? value, int index);
 }
 
@@ -20,6 +20,11 @@ class SigninControllerImp extends SigninController {
   onFocuesd(int index) {
     // isActive = true;
     isItActivList[index] = true;
+    update();
+  }
+
+  editingCompleted(int index) {
+    isItActivList[index] = false;
     update();
   }
 
