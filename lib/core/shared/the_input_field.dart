@@ -8,8 +8,9 @@ class TheInputField extends StatelessWidget {
   // final Key? theKey;
   final String theHient;
   final double theRadus;
-
   final Color theBorderColor;
+  final TextEditingController theEditingController;
+
   // final Color theInputColor;
   // final double theBorderRadius, thePadding;
   // final IconData theLeadingIcon;
@@ -32,6 +33,7 @@ class TheInputField extends StatelessWidget {
     required this.isPassword,
     required this.theInputType,
     this.onIconTap,
+    required this.theEditingController,
   }) : super(key: key);
 
   @override
@@ -47,6 +49,7 @@ class TheInputField extends StatelessWidget {
         ),
       ),
       child: TextFormField(
+        controller: theEditingController,
         // validator: theValidator,
 
 // onSubmitted: ,
@@ -57,40 +60,40 @@ class TheInputField extends StatelessWidget {
         obscureText: isPassword == false ? false : true,
         style: Theme.of(context).textTheme.bodyText1,
         decoration: InputDecoration(
-            fillColor: AppColor.kPrimaryColor.withOpacity(.2),
-            border: InputBorder.none,
-            icon: GestureDetector(
-              onTap: onIconTap,
-              // child: Icon(
-              //   // theLeadingIcon,
-              //   color: Theme.of(context).textTheme.bodyText1!.color!,
-              // ),
-            ),
-            hintText: theHient,
-            // hintStyle: Theme.of(context)
-            //     .textTheme
-            //     .bodyText1!
-            //     .copyWith(color: Colors.black),
-            hintStyle: TextStyle(
-              color: Colors.black,
-            )),
+          fillColor: AppColor.kPrimaryColor.withOpacity(.2),
+          border: InputBorder.none,
+          icon: GestureDetector(
+            onTap: onIconTap,
+            // child: Icon(
+            //   // theLeadingIcon,
+            //   color: Theme.of(context).textTheme.bodyText1!.color!,
+            // ),
+          ),
+          hintText: theHient,
+
+          hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
+                color: AppColor.kLightTextColor,
+              ),
+
+          // hintStyle: Theme.of(context)
+          //     .textTheme
+          //     .bodyText1!
+          //     .copyWith(color: Colors.black),
+
+          // hintStyle: TextStyle(
+          //   color: Colors.black,
+          // ),
+        ),
       ),
     );
   }
 }
 
-
 // TheSearchBar
 
-
-                          // isPassword: false,
-                          // textInputType: TextInputType.name,
-                          // theSize: Get.width,
-                          // theHint: AppLocal.Email.tr,
-                          // theLeadingIcon: Icons.email_outlined,
-                          // backgroundColor: AppColor.theMainLightColor,
-
-
-
-
-                         
+// isPassword: false,
+// textInputType: TextInputType.name,
+// theSize: Get.width,
+// theHint: AppLocal.Email.tr,
+// theLeadingIcon: Icons.email_outlined,
+// backgroundColor: AppColor.theMainLightColor,

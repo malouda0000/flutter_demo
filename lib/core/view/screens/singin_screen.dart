@@ -9,6 +9,11 @@ import 'package:flutter_demo/core/view/screens/home_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+TextEditingController? userNaEditingController = TextEditingController();
+TextEditingController? phoneNumEditingController = TextEditingController();
+TextEditingController? passwordEditingController = TextEditingController();
+TextEditingController? repasswordEditingController = TextEditingController();
+
 class SingInScreen extends StatelessWidget {
   const SingInScreen({super.key});
 
@@ -49,7 +54,9 @@ class SingInScreen extends StatelessWidget {
               ),
               emptySpace,
               TheInputField(
+                // user name
                 theHient: 'محمد احمد صالح سعيد',
+                theEditingController: userNaEditingController!,
                 isPassword: false,
                 theBorderColor: AppColor.kPrimaryColor,
                 theInputType: TextInputType.text,
@@ -65,7 +72,10 @@ class SingInScreen extends StatelessWidget {
               ),
               emptySpace,
               TheInputField(
+                // phone num
                 theHient: 'محمد احمد صالح سعيد',
+                theEditingController: phoneNumEditingController!,
+
                 isPassword: false,
                 theBorderColor: AppColor.kPrimaryColor,
                 theInputType: TextInputType.text,
@@ -81,7 +91,10 @@ class SingInScreen extends StatelessWidget {
               ),
               emptySpace,
               TheInputField(
+                // password
                 theHient: 'كلمة السر',
+                theEditingController: passwordEditingController!,
+
                 isPassword: false,
                 theBorderColor: AppColor.kPrimaryColor,
                 theInputType: TextInputType.text,
@@ -90,7 +103,10 @@ class SingInScreen extends StatelessWidget {
               emptySpace,
               emptySpace,
               TheInputField(
+                // repassword
                 theHient: 'تاكيد كلمة السر',
+                theEditingController: repasswordEditingController!,
+
                 isPassword: false,
                 theInputType: TextInputType.text,
                 theBorderColor: AppColor.kPrimaryColor,
