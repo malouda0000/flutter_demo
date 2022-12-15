@@ -46,10 +46,24 @@ dependencies:
   # shared_preferences: ^2.0.15
   # iconsax: ^0.0.8
   # flutter_remix: ^0.0.1
+  flutter_native_splash: ^2.2.16
+  flutter_launcher_icons: ^0.11.0
+
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+
+flutter_native_splash:
+  color: "#B4B4B4"
+  image: assets/images/appIcons/mainLogo.png
+  ios: true
+  android_gravity: center
+  #image_dark: assets/android12splash-invert.png
+  color_dark: "#282828"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

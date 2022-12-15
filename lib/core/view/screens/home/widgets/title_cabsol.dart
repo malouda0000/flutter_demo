@@ -29,13 +29,16 @@ class TitleCabsol extends StatelessWidget {
           30,
         ),
       ),
-      child: Expanded(
-        child: TitleBuilder(
-            isBold: true,
-            theTitle: theTitle,
-            textColor: isActive
-                ? Theme.of(context).scaffoldBackgroundColor
-                : Theme.of(context).textTheme.headline6!.color!),
+      child: GestureDetector(
+        onTap: () {},
+        child: Expanded(
+          child: TitleBuilder(
+              isBold: true,
+              theTitle: theTitle,
+              textColor: isActive
+                  ? Theme.of(context).scaffoldBackgroundColor
+                  : Theme.of(context).textTheme.headline6!.color!),
+        ),
       ),
     );
   }
