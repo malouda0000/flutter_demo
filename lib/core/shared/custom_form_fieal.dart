@@ -41,31 +41,34 @@ class CustomFormFiea extends StatelessWidget {
           style:
               const TextStyle(fontWeight: FontWeight.w500, color: Colors.black),
           decoration: InputDecoration(
-            filled: true,
-            // fillColor: Theme.of(context).scaffoldBackgroundColor,
-            fillColor: signinControllerImp.isItActivList[theIndex]
-                ? AppColor.kinputformFillColor
-                : Colors.white,
+              filled: true,
+              // fillColor: Theme.of(context).scaffoldBackgroundColor,
+              fillColor: signinControllerImp.isItActivList[theIndex]
+                  ? AppColor.kinputformFillColor
+                  : Colors.white,
 
-            // fillColor: AppColor.kinputformFillColor,
+              // fillColor: AppColor.kinputformFillColor,
 
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(theSmallPadding),
-            ),
-            // focusedBorder: OutlineInputBorder(),
-            // focusColor: AppColor.kinputformFillColor,
-            // focusColor: AppColor.kPrimaryColor,
-            //  focusedBorder: InputBorder,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(theSmallPadding),
+              ),
+              // focusedBorder: OutlineInputBorder(),
+              // focusColor: AppColor.kinputformFillColor,
+              // focusColor: AppColor.kPrimaryColor,
+              //  focusedBorder: InputBorder,
 
-            hintText: theHintText,
-            // hintStyle: TextStyle()
+              hintText: theHintText,
+              hintStyle: TextStyle(
+                color: AppColor.kHintColor,
+                fontWeight: FontWeight.w500,
+              )
 
-            // focusedBorder: OutlineInputBorder(
-            //   borderSide:
-            //       const BorderSide(color: AppColor.kPrimaryColor, width: 2.0),
-            //   // borderRadius: BorderRadius.circular(25.0),
-            // ),
-          ));
+              // focusedBorder: OutlineInputBorder(
+              //   borderSide:
+              //       const BorderSide(color: AppColor.kPrimaryColor, width: 2.0),
+              //   // borderRadius: BorderRadius.circular(25.0),
+              // ),
+              ));
     });
   }
 }

@@ -177,7 +177,7 @@ class _lableBuilder extends StatelessWidget {
     return Text(
       lable,
       style: Theme.of(context).textTheme.headline6!.copyWith(
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w700,
           ),
     );
   }
