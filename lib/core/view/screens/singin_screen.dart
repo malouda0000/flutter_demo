@@ -3,8 +3,6 @@ import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/app_images.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
 import 'package:flutter_demo/core/shared/big_button.dart';
-import 'package:flutter_demo/core/shared/the_input_field.dart';
-import 'package:flutter_demo/core/shared/title_builder.dart';
 import 'package:flutter_demo/core/view/screens/home_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -64,7 +62,7 @@ class SingInScreen extends StatelessWidget {
                 //   theRadus: theDefaultRaduis,
                 // ),
 
-                CustomFormFiea(
+                const CustomFormFiea(
                   theHintText: 'ابحث عن طلبك',
                 ),
                 emptySpace,
@@ -77,7 +75,7 @@ class SingInScreen extends StatelessWidget {
                 ),
                 emptySpace,
 
-                CustomFormFiea(
+                const CustomFormFiea(
                   theHintText: 'ادخل رقم هاتفك',
                 ),
                 emptySpace,
@@ -89,22 +87,22 @@ class SingInScreen extends StatelessWidget {
                       ),
                 ),
                 emptySpace,
-                CustomFormFiea(
+                const CustomFormFiea(
                   theHintText: 'ادخل كلمة السر',
                 ),
                 emptySpace,
                 emptySpace,
-                CustomFormFiea(
+                const CustomFormFiea(
                   theHintText: 'تاكيد كلمة السر',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 42,
                 ),
 
                 BigggButton(
                   theButtonTitle: 'انشاء حساب',
                   onTaped: () {
-                    Get.to(HomeScreen());
+                    Get.to(const HomeScreen());
                   },
                   theTextColor: Colors.white,
                   theButtonColor: AppColor.kPrimaryColor,
@@ -138,12 +136,14 @@ class SingInScreen extends StatelessWidget {
                   child: BigggButton(
                     theButtonTitle: 'تسجيل دخول',
                     onTaped: () {
-                      Get.to(HomeScreen());
+                      Get.to(const HomeScreen());
                     },
                     theTextColor: AppColor.kPrimaryColor,
                     theButtonColor: Theme.of(context).scaffoldBackgroundColor,
                   ),
                 ),
+                emptySpace,
+                emptySpace,
               ],
             ),
           ),
@@ -161,8 +161,10 @@ class CustomFormFiea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      clipBehavior: Clip.hardEdge,
       height: 50,
-      padding: EdgeInsets.symmetric(horizontal: theSmallPadding),
+      width: Get.width - (theDefaultPadding * 2),
+      padding: const EdgeInsets.symmetric(horizontal: theSmallPadding),
       decoration: BoxDecoration(
         border: Border.all(
           // color: isActive ? AppColor.kPrimaryColor : AppColor.kLightTextColor,
