@@ -62,7 +62,7 @@ flutter_icons:
 
 
 flutter_native_splash:
-  color: "#B4B4B4"
+  color: "#FFFFFF"
   image: assets/images/appIcons/mainLogo.png
   ios: true
   android_gravity: center
