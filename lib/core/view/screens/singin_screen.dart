@@ -4,7 +4,7 @@ import 'package:flutter_demo/core/constants/app_images.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
 import 'package:flutter_demo/core/shared/big_button.dart';
 import 'package:flutter_demo/core/shared/custom_form_fieal.dart';
-import 'package:flutter_demo/core/view/screens/home_screen.dart';
+import 'package:flutter_demo/core/view/screens/home/home_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -20,8 +20,8 @@ class SingInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: SingleChildScrollView(
-        child: Padding(
+          child: ListView(shrinkWrap: true, children: [
+        Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: theDefaultPadding,
           ),
@@ -41,55 +41,34 @@ class SingInScreen extends StatelessWidget {
                 const SizedBox(
                   height: 42,
                 ),
-                // TitleBuilder(
-                //   theTitle: 'الاسم',
-                //   isBold: true,
-                // ),
-
-                Text(
-                  "الاسم",
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                const _lableBuilder(
+                  lable: "الاسم",
                 ),
                 emptySpace,
-                // TheInputField(
-                //   // user name
-                //   theHient: 'محمد احمد صالح سعيد',
-                //   theEditingController: userNaEditingController!,
-                //   isPassword: false,
-                //   theBorderColor: AppColor.kPrimaryColor,
-                //   theInputType: TextInputType.text,
-                //   theRadus: theDefaultRaduis,
-                // ),
-
                 CustomFormFiea(
                   // user name text
                   theHintText: 'محمد احمد صالح سعيد',
                   textEditingController: userNaEditingController,
                 ),
-                emptySpace,
-                emptySpace,
-                Text(
-                  "رقم الهاتف",
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                emptySpace,
 
+                //
+                //
+
+                emptySpace,
+                emptySpace,
+                const _lableBuilder(lable: "رقم الهاتف"),
+                emptySpace,
                 CustomFormFiea(
                   theHintText: 'ادخل رقم هاتفك',
                   textEditingController: phoneNumEditingController,
                 ),
+
+                //
+                //
+
                 emptySpace,
                 emptySpace,
-                Text(
-                  "كلمة السر",
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
+                const _lableBuilder(lable: "كلمة السر"),
                 emptySpace,
                 CustomFormFiea(
                   theHintText: 'ادخل كلمة السر',
@@ -105,6 +84,9 @@ class SingInScreen extends StatelessWidget {
                   height: 42,
                 ),
 
+                //
+                //
+
                 BigggButton(
                   theButtonTitle: 'انشاء حساب',
                   onTaped: () {
@@ -114,66 +96,84 @@ class SingInScreen extends StatelessWidget {
                   theButtonColor: AppColor.kPrimaryColor,
                 ),
 
+                //
+                //
+
                 emptySpace,
                 emptySpace,
                 Center(
-                  child: Text(
-                    "لديك حساب مسبقا؟",
-                    style: Theme.of(context).textTheme.headline6!.copyWith(
-                          color: AppColor.kGreyTextColor,
-                        ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-
-                emptySpace,
-                emptySpace,
-
-                Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      theSmallPadding,
-                    ),
-                    border: Border.all(
-                      color: AppColor.kPrimaryColor,
-                    ),
-                  ),
-                  child: BigggButton(
-                    theButtonTitle: 'تسجيل دخول',
-                    onTaped: () {
+                  child: GestureDetector(
+                    onTap: () {
                       Get.to(const HomeScreen());
                     },
-                    theTextColor: AppColor.kPrimaryColor,
-                    theButtonColor: Theme.of(context).scaffoldBackgroundColor,
+                    child: Text(
+                      "لديك حساب مسبقا؟",
+                      style: Theme.of(context).textTheme.headline6!.copyWith(
+                            color: AppColor.kGreyTextColor,
+                          ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
+
+                emptySpace,
+                emptySpace,
+
+                const _creatAccountButton(),
                 emptySpace,
                 emptySpace,
               ],
             ),
           ),
         ),
-      )),
+      ])),
     );
   }
 }
 
-// class _customFormFiea extends StatefulWidget {
-//   final String? theHintText;
-//   const _customFormFiea({super.key, required this.theHintText});
+class _creatAccountButton extends StatelessWidget {
+  const _creatAccountButton({
+    Key? key,
+  }) : super(key: key);
 
-//   @override
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          theSmallPadding,
+        ),
+        border: Border.all(
+          color: AppColor.kPrimaryColor,
+        ),
+      ),
+      child: BigggButton(
+        theButtonTitle: 'تسجيل دخول',
+        onTaped: () {
+          Get.to(const HomeScreen());
+        },
+        theTextColor: AppColor.kPrimaryColor,
+        theButtonColor: Theme.of(context).scaffoldBackgroundColor,
+      ),
+    );
+  }
+}
 
-  
-//   State<_customFormFiea> createState() => _customFormFieaState();
-// }
+class _lableBuilder extends StatelessWidget {
+  final String lable;
+  const _lableBuilder({
+    Key? key,
+    required this.lable,
+  }) : super(key: key);
 
-// class _customFormFieaState extends State<_customFormFiea> {
-//   static bool isActive = false;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ;
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      lable,
+      style: Theme.of(context).textTheme.headline6!.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
+    );
+  }
+}
