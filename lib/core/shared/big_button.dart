@@ -24,7 +24,10 @@ class BigggButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
+      width: double.infinity,
+      clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
+        color: theButtonColor,
         borderRadius: BorderRadius.circular(
           theSmallPadding,
         ),
@@ -32,31 +35,17 @@ class BigggButton extends StatelessWidget {
           color: AppColor.kPrimaryColor,
         ),
       ),
-      child: SizedBox(
-        height: 50,
-        width: double.infinity,
-        child: Container(
-          width: double.infinity,
-          clipBehavior: Clip.hardEdge,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(
-              theSmallPadding,
-            ),
-          ),
-          child: MaterialButton(
-            color: theButtonColor,
-            elevation: 5,
-            // shape: ShapeBorder.lerp(a, b, t),
+      child: MaterialButton(
+        // elevation: 5,
+        // shape: ShapeBorder.lerp(a, b, t),
 
-            height: 70,
-            child: TitleBuilder(
-              isBold: true,
-              theTitle: theButtonTitle,
-              textColor: theTextColor,
-            ),
-            onPressed: onTaped,
-          ),
+        // height: 70,
+        child: TitleBuilder(
+          isBold: true,
+          theTitle: theButtonTitle,
+          textColor: theTextColor,
         ),
+        onPressed: onTaped,
       ),
     );
   }
