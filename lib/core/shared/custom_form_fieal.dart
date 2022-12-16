@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
-import 'package:flutter_demo/controller/signin_controller.dart';
+import 'package:flutter_demo/controller/signup_controller.dart';
 import 'package:get/get.dart';
 
 class CustomFormFiea extends StatelessWidget {
@@ -18,23 +18,23 @@ class CustomFormFiea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SigninControllerImp signinControllerImp = Get.put(SigninControllerImp());
-    return GetBuilder<SigninControllerImp>(builder: (
+    SignupControllerImp signupControllerImp = Get.put(SignupControllerImp());
+    return GetBuilder<SignupControllerImp>(builder: (
       context,
     ) {
       return TextFormField(
           controller: textEditingController,
           onEditingComplete: () {
-            signinControllerImp.editingCompleted(theIndex);
+            signupControllerImp.editingCompleted(theIndex);
           },
           // textDirection: TextDirection.rtl,
           textAlign: TextAlign.end,
           cursorColor: AppColor.kPrimaryColor,
           // onTap: () {
-          //   signinControllerImp.onFocuesd(theIndex);
+          //   signupControllerImp.onFocuesd(theIndex);
           // },
           onChanged: (value) {
-            signinControllerImp.changeFillColor(value, theIndex);
+            signupControllerImp.changeFillColor(value, theIndex);
           },
           autofocus: false,
           keyboardType: theTextInputType ?? TextInputType.text,
@@ -43,7 +43,7 @@ class CustomFormFiea extends StatelessWidget {
           decoration: InputDecoration(
               filled: true,
               // fillColor: Theme.of(context).scaffoldBackgroundColor,
-              fillColor: signinControllerImp.isItActivList[theIndex]
+              fillColor: signupControllerImp.isItActivList[theIndex]
                   ? AppColor.kinputformFillColor
                   : Colors.white,
 

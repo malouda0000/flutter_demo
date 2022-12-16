@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_demo/view/screens/onbording/widgets/onbording_data.dart';
-import 'package:flutter_demo/view/screens/signin/singin_screen.dart';
+import 'package:flutter_demo/view/screens/signin/singup_screen.dart';
 import 'package:get/get.dart';
 
 abstract class CustomOnBordingController extends GetxController {

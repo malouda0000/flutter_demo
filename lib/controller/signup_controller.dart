@@ -1,7 +1,7 @@
 import 'package:flutter_demo/view/screens/home/home_screen.dart';
 import 'package:get/get.dart';
 
-abstract class SigninController extends GetxController {
+abstract class SignupController extends GetxController {
   onFocuesd(int index);
   editingCompleted(int index);
   changeFillColor(String? value, int index);
@@ -9,7 +9,7 @@ abstract class SigninController extends GetxController {
   signup();
 }
 
-class SigninControllerImp extends SigninController {
+class SignupControllerImp extends SignupController {
   List<bool> isItActivList = [
     false,
     false,
