@@ -39,11 +39,14 @@ class OnBordingPageSlider extends GetView<OnBordingControllerImp> {
                 child: Text(
                   textAlign: TextAlign.center,
                   dashONbordingList[index].title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     // color: Colors.white,
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    // color: Colors.black,
+                    color: Get.isDarkMode
+                        ? AppColor.kPrimaryColor
+                        : Theme.of(context).textTheme.bodyText1!.color!,
                   ),
                 ),
               ),
@@ -59,10 +62,13 @@ class OnBordingPageSlider extends GetView<OnBordingControllerImp> {
                 child: Text(
                   dashONbordingList[index].discription,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
                     height: 1.5,
-                    color: Colors.black,
+                    // color: Colors.black,
+                    color: Get.isDarkMode
+                        ? AppColor.kPrimaryColor
+                        : Theme.of(context).textTheme.bodyText1!.color!,
                   ),
                 ),
               ),

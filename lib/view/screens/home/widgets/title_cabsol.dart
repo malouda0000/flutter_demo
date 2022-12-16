@@ -33,11 +33,11 @@ class TitleCabsol extends StatelessWidget {
         onTap: () {},
         child: Expanded(
           child: TitleBuilder(
-              isBold: true,
+              isBold: false,
               theTitle: theTitle,
               textColor: isActive
                   ? Theme.of(context).scaffoldBackgroundColor
-                  : Theme.of(context).textTheme.headline6!.color!),
+                  : Theme.of(context).textTheme.bodyText1!.color!),
         ),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
+import 'package:flutter_demo/core/themes/my_themes.dart';
 import 'package:flutter_demo/view/screens/auth/signin_screen.dart';
 import 'package:flutter_demo/view/screens/home/home_screen.dart';
 import 'package:flutter_demo/view/screens/onbording/onbording_screen.dart';
@@ -29,9 +30,11 @@ class MyApp extends StatelessWidget {
             // or from RGB
           ),
           textTheme: TextTheme()),
-      // home: const OnbordingScreen(),
-      home: const SigninScreen(),
-      // home: const SingInScreen(),
+      themeMode: ThemeMode.system,
+      darkTheme: MyThemes.customDarkTheme,
+      home: const OnbordingScreen(),
+      // home: const SigninScreen(),
+      // home: const HomeScreen(),
     );
   }
 }
