@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
-import 'package:flutter_demo/core/view/screens/home/home_screen.dart';
-import 'package:flutter_demo/core/view/screens/signin/singin_screen.dart';
+import 'package:flutter_demo/view/screens/home/home_screen.dart';
+import 'package:flutter_demo/view/screens/onbording/onbording_screen.dart';
+import 'package:flutter_demo/view/screens/signin/singin_screen.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -27,7 +28,9 @@ class MyApp extends StatelessWidget {
             // or from RGB
           ),
           textTheme: TextTheme()),
-      home: const SingInScreen(),
+      home: const OnbordingScreen(),
+      // home: const SingInScreen(),
+      // home: const SingInScreen(),
     );
   }
 }

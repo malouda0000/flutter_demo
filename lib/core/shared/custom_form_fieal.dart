@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
-import 'package:flutter_demo/core/controller/signin_controller.dart';
+import 'package:flutter_demo/controller/signin_controller.dart';
 import 'package:get/get.dart';
 
 class CustomFormFiea extends StatelessWidget {

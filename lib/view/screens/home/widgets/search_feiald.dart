@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/app_images.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
-import 'package:flutter_demo/core/view/screens/home/home_screen.dart';
+import 'package:flutter_demo/view/screens/home/home_screen.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SearchFeiald extends StatelessWidget {
