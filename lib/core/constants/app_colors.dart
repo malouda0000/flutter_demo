@@ -9,6 +9,9 @@ class AppColor {
   static const kLightInputformColor = Color(0xFFD1CFCF);
   static const kHintColor = Color(0xFF999797);
 
+  static const kColorOne = Color(0xFF252422);
+  static const kColorTwo = Color(0xFF403d39);
+
   static final kLightGreenBorder = kPrimaryColor.withOpacity(
     .40,
   );
