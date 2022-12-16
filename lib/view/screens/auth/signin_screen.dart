@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/controller/signin_controller.dart';
 import 'package:flutter_demo/controller/signup_controller.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/app_images.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
 import 'package:flutter_demo/core/shared/big_button.dart';
 import 'package:flutter_demo/core/shared/custom_form_fieal.dart';
+import 'package:flutter_demo/view/screens/auth/signup_screen.dart';
+import 'package:flutter_demo/view/screens/auth/widgets/lable_builder.dart';
 import 'package:flutter_demo/view/screens/home/home_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-TextEditingController? userNaEditingController = TextEditingController();
 TextEditingController? phoneNumEditingController = TextEditingController();
 TextEditingController? passwordEditingController = TextEditingController();
-TextEditingController? repasswordEditingController = TextEditingController();
-SignupControllerImp signupControllerImp = Get.put(SignupControllerImp());
+SigninControllerImp signinControllerImp = Get.put(SigninControllerImp());
 
-class SingInScreen extends StatelessWidget {
-  const SingInScreen({super.key});
+class SigninScreen extends StatelessWidget {
+  const SigninScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,22 +41,13 @@ class SingInScreen extends StatelessWidget {
                 const SizedBox(
                   height: 42,
                 ),
-                const _lableBuilder(lable: "الاسم"),
-                emptySpace,
-                CustomFormFiea(
-                  // user name text
-                  theHintText: 'الاسم',
-                  textEditingController: userNaEditingController,
-                  theTextInputType: TextInputType.text,
-                  theIndex: 0,
-                ),
 
                 //
                 //
 
                 emptySpace,
                 emptySpace,
-                const _lableBuilder(lable: "رقم الهاتف"),
+                const LableBuilder(lable: "رقم الهاتف"),
                 emptySpace,
                 CustomFormFiea(
                   theHintText: 'ادخل رقم هاتفك',
@@ -71,7 +63,7 @@ class SingInScreen extends StatelessWidget {
 
                 emptySpace,
                 emptySpace,
-                const _lableBuilder(lable: "كلمة السر"),
+                const LableBuilder(lable: "كلمة السر"),
                 emptySpace,
                 CustomFormFiea(
                   theHintText: 'ادخل كلمة السر',
@@ -79,25 +71,16 @@ class SingInScreen extends StatelessWidget {
                   theTextInputType: TextInputType.text,
                   theIndex: 2,
                 ),
-                emptySpace,
-                emptySpace,
-                CustomFormFiea(
-                  theHintText: 'تاكيد كلمة السر',
-                  textEditingController: repasswordEditingController,
-                  theTextInputType: TextInputType.text,
-                  theIndex: 3,
-                ),
-                const SizedBox(
-                  height: 42,
-                ),
 
                 //
                 //
 
+                emptySpace,
+                emptySpace,
                 BigggButton(
-                  theButtonTitle: 'انشاء حساب',
+                  theButtonTitle: 'تسجيل الدخول',
                   onTaped: () {
-                    signupControllerImp.signup();
+                    signinControllerImp.signin();
                   },
                   theTextColor: Colors.white,
                   theButtonColor: AppColor.kPrimaryColor,
@@ -109,24 +92,26 @@ class SingInScreen extends StatelessWidget {
                 emptySpace,
                 emptySpace,
                 Center(
-                  child: GestureDetector(
-                    onTap: () {
-                      Get.to(const HomeScreen());
-                    },
-                    child: Text(
-                      "لديك حساب مسبقا؟",
-                      style: Theme.of(context).textTheme.headline6!.copyWith(
-                            color: AppColor.kGreyTextColor,
-                          ),
-                      textAlign: TextAlign.center,
-                    ),
+                  child: Text(
+                    "ليس لديك حساب؟",
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                          color: AppColor.kGreyTextColor,
+                        ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
 
                 emptySpace,
                 emptySpace,
 
-                const CreatAccountButton(),
+                BigggButton(
+                  theButtonTitle: 'انشاء حساب',
+                  onTaped: () {
+                    Get.offAll(const SignupScreen());
+                  },
+                  theTextColor: AppColor.kPrimaryColor,
+                  theButtonColor: Theme.of(context).scaffoldBackgroundColor,
+                ),
                 emptySpace,
                 emptySpace,
               ],
@@ -134,53 +119,6 @@ class SingInScreen extends StatelessWidget {
           ),
         ),
       ])),
-    );
-  }
-}
-
-class CreatAccountButton extends StatelessWidget {
-  const CreatAccountButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-          theSmallPadding,
-        ),
-        border: Border.all(
-          color: AppColor.kPrimaryColor,
-        ),
-      ),
-      child: BigggButton(
-        theButtonTitle: 'تسجيل دخول',
-        onTaped: () {
-          Get.to(const HomeScreen());
-        },
-        theTextColor: AppColor.kPrimaryColor,
-        theButtonColor: Theme.of(context).scaffoldBackgroundColor,
-      ),
-    );
-  }
-}
-
-class _lableBuilder extends StatelessWidget {
-  final String lable;
-  const _lableBuilder({
-    Key? key,
-    required this.lable,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      lable,
-      style: Theme.of(context).textTheme.headline6!.copyWith(
-            fontWeight: FontWeight.w700,
-          ),
     );
   }
 }

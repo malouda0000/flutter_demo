@@ -22,29 +22,40 @@ class BigggButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 50,
-      width: double.infinity,
-      child: Container(
-        width: double.infinity,
-        clipBehavior: Clip.hardEdge,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(
-            theSmallPadding,
-          ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          theSmallPadding,
         ),
-        child: MaterialButton(
-          color: theButtonColor,
-          elevation: 5,
-          // shape: ShapeBorder.lerp(a, b, t),
-
-          height: 70,
-          child: TitleBuilder(
-            isBold: true,
-            theTitle: theButtonTitle,
-            textColor: theTextColor,
+        border: Border.all(
+          color: AppColor.kPrimaryColor,
+        ),
+      ),
+      child: SizedBox(
+        height: 50,
+        width: double.infinity,
+        child: Container(
+          width: double.infinity,
+          clipBehavior: Clip.hardEdge,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              theSmallPadding,
+            ),
           ),
-          onPressed: onTaped,
+          child: MaterialButton(
+            color: theButtonColor,
+            elevation: 5,
+            // shape: ShapeBorder.lerp(a, b, t),
+
+            height: 70,
+            child: TitleBuilder(
+              isBold: true,
+              theTitle: theButtonTitle,
+              textColor: theTextColor,
+            ),
+            onPressed: onTaped,
+          ),
         ),
       ),
     );

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/controller/onbording_controller.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
+import 'package:flutter_demo/view/screens/auth/signin_screen.dart';
 import 'package:flutter_demo/view/screens/onbording/widgets/onbording_data.dart';
 import 'package:flutter_demo/view/screens/onbording/widgets/onbording_pages_slider.dart';
-import 'package:flutter_demo/view/screens/signin/singup_screen.dart';
 import 'package:get/get.dart';
 
 late PageController pageController;
@@ -110,7 +110,7 @@ class _SkipButton extends GetView<OnBordingControllerImp> {
               ),
         ),
         onPressed: () {
-          Get.offAll(SingInScreen());
+          Get.offAll(SigninScreen());
         },
       ),
     );

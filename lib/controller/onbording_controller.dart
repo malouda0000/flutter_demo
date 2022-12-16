@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_demo/view/screens/auth/signin_screen.dart';
 import 'package:flutter_demo/view/screens/onbording/widgets/onbording_data.dart';
-import 'package:flutter_demo/view/screens/signin/singup_screen.dart';
 import 'package:get/get.dart';
 
 abstract class CustomOnBordingController extends GetxController {
@@ -19,7 +19,8 @@ class OnBordingControllerImp extends CustomOnBordingController {
   next() {
     currentPage++;
     if (currentPage >= dashONbordingList.length) {
-      Get.offAll(SingInScreen());
+      Get.offAll(SigninScreen());
+      // mySharedPref.setString...
     } else {
       pageController.animateToPage(currentPage,
           duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
@@ -28,7 +29,8 @@ class OnBordingControllerImp extends CustomOnBordingController {
 
   @override
   skip() {
-    Get.offAll(SingInScreen());
+    Get.offAll(SigninScreen());
+    // mySharedPref.setString...
     update();
   }
 
