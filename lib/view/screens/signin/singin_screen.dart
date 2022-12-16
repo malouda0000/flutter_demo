@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/controller/signin_controller.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/app_images.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
@@ -12,6 +13,7 @@ TextEditingController? userNaEditingController = TextEditingController();
 TextEditingController? phoneNumEditingController = TextEditingController();
 TextEditingController? passwordEditingController = TextEditingController();
 TextEditingController? repasswordEditingController = TextEditingController();
+SigninControllerImp signinControllerImp = Get.put(SigninControllerImp());
 
 class SingInScreen extends StatelessWidget {
   const SingInScreen({super.key});
@@ -95,7 +97,7 @@ class SingInScreen extends StatelessWidget {
                 BigggButton(
                   theButtonTitle: 'انشاء حساب',
                   onTaped: () {
-                    Get.to(const HomeScreen());
+                    signinControllerImp.signup();
                   },
                   theTextColor: Colors.white,
                   theButtonColor: AppColor.kPrimaryColor,

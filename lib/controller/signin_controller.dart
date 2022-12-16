@@ -1,9 +1,12 @@
+import 'package:flutter_demo/view/screens/home/home_screen.dart';
 import 'package:get/get.dart';
 
 abstract class SigninController extends GetxController {
   onFocuesd(int index);
   editingCompleted(int index);
   changeFillColor(String? value, int index);
+
+  signup();
 }
 
 class SigninControllerImp extends SigninController {
@@ -37,5 +40,10 @@ class SigninControllerImp extends SigninController {
       isItActivList[index] = true;
       update();
     }
+  }
+
+  @override
+  signup() {
+    Get.offAll(HomeScreen());
   }
 }
