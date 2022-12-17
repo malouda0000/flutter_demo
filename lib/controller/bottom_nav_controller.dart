@@ -1,55 +1,76 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_demo/core/constants/app_colors.dart';
+import 'package:flutter_demo/core/shared/title_builder.dart';
+import 'package:flutter_demo/view/screens/home/home_screen.dart';
+import 'package:get/get.dart';
 
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
+abstract class BottomNavBarController extends GetxController {
+  changeBody(RxInt i);
+}
 
-// abstract class BottomNavBarController extends GetxController {
-//   changeBody(int i);
-// }
+class BottomNavBarControllerImp extends BottomNavBarController {
+  // late PageController pageController;
+  // TabController bottNavTapCont = 0;
+  RxInt currentBody = 2.obs;
+  List<Widget> bodyWidgestsList = const [
+    tempPage(
+      theTitle: 'tab 1',
+    ),
+    tempPage(
+      theTitle: 'tab 2',
+    ),
+    HomeScreenBody(),
+    tempPage(
+      theTitle: 'tab 3',
+    ),
+    tempPage(
+      theTitle: 'tab 4',
+    ),
+  ];
 
-// class BottomNavBarControllerImp extends BottomNavBarController {
-//   // late PageController pageController;
-//   // TabController bottNavTapCont = 0;
-//   int currentBody = 2;
-//   List<Widget> bodyWidgestsList = const [
-//     // Expanded(
-//     //   child: Container(
-//     //       padding: EdgeInsets.all(
-//     //         theDefaultPadding,
-//     //       ),
-//     //       color: Colors.indigo,
-//     //       // width: 30,
-//     //       // height: 30,
-//     //       child: Temp(theTitle: '2')),
-//     // ),
-//     UnderDevelopment(),
-//     UnderDevelopment(),
-//     HomeScreen(),
-//     UnderDevelopment(),
-//     Settings(),
-//   ];
+  @override
+  void changeBody(RxInt i) {
+    currentBody = i;
+    update();
+  }
 
-//   @override
-//   void changeBody(int i) {
-//     currentBody = i;
-//     update();
-//   }
+  @override
+  void onInit() {
+    // pageController = PageController();
+    super.onInit();
+  }
+}
 
-//   @override
-//   void onInit() {
-//     // pageController = PageController();
-//     super.onInit();
-//   }
-// }
+class tempPage extends StatelessWidget {
+  final String theTitle;
+  const tempPage({
+    Key? key,
+    required this.theTitle,
+  }) : super(key: key);
 
-// class MyTempWidget extends StatelessWidget {
-//   final String theTitle;
-//   const MyTempWidget({super.key, required this.theTitle});
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Center(
+        child: TitleBuilder(
+          theTitle: theTitle,
+          isBold: true,
+          textColor: AppColor.kPrimaryColor,
+        ),
+      ),
+    );
+  }
+}
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Center(
-//       child: Text(theTitle),
-//     );
-//   }
-// }
+class MyTempWidget extends StatelessWidget {
+  final String theTitle;
+  const MyTempWidget({super.key, required this.theTitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(theTitle),
+    );
+  }
+}

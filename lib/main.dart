@@ -32,9 +32,9 @@ class MyApp extends StatelessWidget {
           textTheme: TextTheme()),
       themeMode: ThemeMode.system,
       darkTheme: MyThemes.customDarkTheme,
-      home: const OnbordingScreen(),
+      // home: const OnbordingScreen(),
       // home: const SigninScreen(),
-      // home: const HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

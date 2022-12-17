@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/controller/bottom_nav_controller.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/app_images.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
+import 'package:flutter_demo/view/screens/bottom%20nav%20bar/bottom_nav_bar.dart';
 import 'package:flutter_demo/view/screens/home/widgets/items_card.dart';
 import 'package:flutter_demo/view/screens/home/widgets/search_feiald.dart';
 import 'package:flutter_demo/view/screens/home/widgets/title_cabsol.dart';
 import 'package:flutter_demo/data/model/images_list.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 TextEditingController? serchTextEditingController = TextEditingController();
+BottomNavBarControllerImp bottomNavBarControllerImp =
+    Get.put(BottomNavBarControllerImp());
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,32 +25,46 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                children: const [
-                  SizedBox(height: 10),
-                  CustomAppBar(),
-                  emptySpace,
-                  SearchFeiald(),
-                  emptySpace,
-                  emptySpace,
-                  CategoresSwitcher(),
-                  emptySpace,
-                  emptySpace,
-                  HomeBody(),
-                ],
-              ),
-            ),
+            GetBuilder<BottomNavBarControllerImp>(builder: (context) {
+              return Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: bottomNavBarControllerImp.bodyWidgestsList[
+                      bottomNavBarControllerImp.currentBody.value]);
+            })
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
 
-class HomeBody extends StatelessWidget {
-  const HomeBody({
+class HomeScreenBody extends StatelessWidget {
+  const HomeScreenBody({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        SizedBox(height: 10),
+        CustomAppBar(),
+        emptySpace,
+        SearchFeiald(),
+        emptySpace,
+        emptySpace,
+        CategoresSwitcher(),
+        emptySpace,
+        emptySpace,
+        Body(),
+      ],
+    );
+  }
+}
+
+class Body extends StatelessWidget {
+  const Body({
     Key? key,
   }) : super(key: key);
 
