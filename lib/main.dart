@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/themes/my_themes.dart';
-import 'package:flutter_demo/view/screens/auth/signin_screen.dart';
 import 'package:flutter_demo/view/screens/home/home_screen.dart';
 import 'package:flutter_demo/view/screens/onbording/onbording_screen.dart';
-import 'package:flutter_demo/view/screens/auth/signup_screen.dart';
 import 'package:get/get.dart';
 
 void main() {

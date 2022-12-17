@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_images.dart';
 
 List<String> vigataList = [

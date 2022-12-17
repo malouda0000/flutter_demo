@@ -24,8 +24,7 @@ class ItemCard extends StatelessWidget {
             color: AppColor.kPrimaryColor,
           )),
 
-      child: Expanded(
-          child: Column(
+      child: Column(
         children: [
           // SvgPicture.asset(
           //   AppImages.menuSvg,
@@ -52,7 +51,7 @@ class ItemCard extends StatelessWidget {
             ],
           )
         ],
-      )),
+      ),
     );
   }
 }

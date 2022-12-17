@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/controller/signin_controller.dart';
-import 'package:flutter_demo/controller/signup_controller.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/app_images.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
@@ -8,7 +7,6 @@ import 'package:flutter_demo/core/shared/big_button.dart';
 import 'package:flutter_demo/core/shared/custom_form_fieal.dart';
 import 'package:flutter_demo/view/screens/auth/signup_screen.dart';
 import 'package:flutter_demo/view/screens/auth/widgets/lable_builder.dart';
-import 'package:flutter_demo/view/screens/home/home_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 

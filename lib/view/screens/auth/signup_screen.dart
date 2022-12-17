@@ -7,7 +7,6 @@ import 'package:flutter_demo/core/shared/big_button.dart';
 import 'package:flutter_demo/core/shared/custom_form_fieal.dart';
 import 'package:flutter_demo/view/screens/auth/signin_screen.dart';
 import 'package:flutter_demo/view/screens/auth/widgets/lable_builder.dart';
-import 'package:flutter_demo/view/screens/home/home_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 

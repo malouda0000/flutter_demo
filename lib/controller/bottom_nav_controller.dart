@@ -51,13 +51,23 @@ class tempPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Center(
-        child: TitleBuilder(
-          theTitle: theTitle,
-          isBold: true,
-          textColor: AppColor.kPrimaryColor,
-        ),
+    return SizedBox(
+      height: Get.height,
+      width: Get.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+
+        // direction: Axis.vertical,
+        children: [
+          Center(
+            child: TitleBuilder(
+              theTitle: theTitle,
+              isBold: true,
+              textColor: AppColor.kPrimaryColor,
+            ),
+          ),
+        ],
       ),
     );
   }
