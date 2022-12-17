@@ -28,7 +28,7 @@ class OnBordingPageSlider extends GetView<OnBordingControllerImp> {
             children: [
               SvgPicture.asset(
                 dashONbordingList[index].imagePath,
-                width: MediaQuery.of(context).size.width * .2,
+                width: MediaQuery.of(context).size.width * .9,
               ),
               const SizedBox(
                 height: 30,

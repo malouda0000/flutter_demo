@@ -10,7 +10,7 @@ final List<MyCustomOnBording> dashONbordingList = [
     discription:
         'يوجد عروض مميزة لا يمكن ان تفوتها ابدا\n يتم تقديم هذه العروض بصورة دورية و شهرية \n كل ذلك و اكثر علي جميع منصاتنا الالكترونية',
 
-    imagePath: AppImages.mainLogoSvg,
+    imagePath: AppImages.onborOrders3,
   ),
   MyCustomOnBording(
     title: 'الطلبات',
@@ -19,7 +19,7 @@ final List<MyCustomOnBording> dashONbordingList = [
 
     // title: AppLocal.moviTixts.tr,
     // discription: AppLocal.moviTixtsDiscription.tr,
-    imagePath: AppImages.mainLogoSvg,
+    imagePath: AppImages.onborOrders3,
   ),
   MyCustomOnBording(
     title: 'خدمات التوريد',
@@ -28,7 +28,7 @@ final List<MyCustomOnBording> dashONbordingList = [
 
     // title: AppLocal.discounts.tr,
     // discription: AppLocal.discountsDiscription.tr,
-    imagePath: AppImages.mainLogoSvg,
+    imagePath: AppImages.onborImporters,
   ),
   MyCustomOnBording(
     title: 'الدعم الفني',
@@ -37,7 +37,7 @@ final List<MyCustomOnBording> dashONbordingList = [
 
     // title: AppLocal.fastDelivery.tr,
     // discription: AppLocal.fastDeliveryDiscription.tr,
-    imagePath: AppImages.mainLogoSvg,
+    imagePath: AppImages.onborSupport,
   ),
   MyCustomOnBording(
     title: 'خدمات التوريد',
@@ -46,6 +46,6 @@ final List<MyCustomOnBording> dashONbordingList = [
 
     // title: AppLocal.discounts.tr,
     // discription: AppLocal.discountsDiscription.tr,
-    imagePath: AppImages.mainLogoSvg,
+    imagePath: AppImages.onborOrders3,
   ),
 ];
