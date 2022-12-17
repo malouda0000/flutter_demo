@@ -109,16 +109,34 @@ class CategoresSwitcher extends StatelessWidget {
         ),
         child: Row(
           // textDirection: TextDirection.rtl,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
-            Expanded(child: TitleCabsol(isActive: true, theTitle: 'العروض')),
-            Expanded(child: TitleCabsol(isActive: false, theTitle: 'الطلبات')),
-            Expanded(child: TitleCabsol(isActive: false, theTitle: 'الموردين')),
+            Flexible(
+                flex: 1,
+                child: TitleCabsol(isActive: true, theTitle: 'العروض')),
+            Flexible(
+                flex: 1,
+                child: TitleCabsol(isActive: false, theTitle: 'الطلبات')),
+            Flexible(
+                flex: 1,
+                child: TitleCabsol(isActive: false, theTitle: 'الموردين')),
           ],
         ),
       ),
     );
   }
 }
+
+// working row
+
+// child: Row(
+//   // textDirection: TextDirection.rtl,
+//   children: const [
+//     Expanded(child: TitleCabsol(isActive: true, theTitle: 'العروض')),
+//     Expanded(child: TitleCabsol(isActive: false, theTitle: 'الطلبات')),
+//     Expanded(child: TitleCabsol(isActive: false, theTitle: 'الموردين')),
+//   ],
+// ),
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({

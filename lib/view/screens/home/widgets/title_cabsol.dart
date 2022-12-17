@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
+import 'package:flutter_demo/core/constants/constants.dart';
 import 'package:flutter_demo/core/shared/title_builder.dart';
 
 class TitleCabsol extends StatelessWidget {
@@ -18,9 +19,10 @@ class TitleCabsol extends StatelessWidget {
       //   horizontal: 15,
       // ),
 
-      height: double.infinity,
-      width: double.infinity,
+      // height: double.infinity,
+      // width: double.infinity,
       alignment: Alignment.center,
+      // padding: EdgeInsets.symmetric(horizontal: theDefaultPadding),
       decoration: BoxDecoration(
         color: isActive
             ? AppColor.kPrimaryColor
@@ -31,14 +33,12 @@ class TitleCabsol extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {},
-        child: Expanded(
-          child: TitleBuilder(
-              isBold: false,
-              theTitle: theTitle,
-              textColor: isActive
-                  ? Theme.of(context).scaffoldBackgroundColor
-                  : Theme.of(context).textTheme.bodyText1!.color!),
-        ),
+        child: TitleBuilder(
+            isBold: false,
+            theTitle: theTitle,
+            textColor: isActive
+                ? Theme.of(context).scaffoldBackgroundColor
+                : Theme.of(context).textTheme.bodyText1!.color!),
       ),
     );
   }
