@@ -10,7 +10,7 @@ final List<MyCustomOnBording> dashONbordingList = [
     discription:
         'يوجد عروض مميزة لا يمكن ان تفوتها ابدا\n يتم تقديم هذه العروض بصورة دورية و شهرية \n كل ذلك و اكثر علي جميع منصاتنا الالكترونية',
 
-    imagePath: AppImages.onborOrders3,
+    imagePath: AppImages.onborShopping1,
   ),
   MyCustomOnBording(
     title: 'الطلبات',
@@ -19,7 +19,7 @@ final List<MyCustomOnBording> dashONbordingList = [
 
     // title: AppLocal.moviTixts.tr,
     // discription: AppLocal.moviTixtsDiscription.tr,
-    imagePath: AppImages.onborOrders3,
+    imagePath: AppImages.onborShopping2,
   ),
   MyCustomOnBording(
     title: 'خدمات التوريد',

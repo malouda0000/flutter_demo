@@ -47,7 +47,7 @@ class HomeScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
+      children: [
         SizedBox(height: 10),
         CustomAppBar(),
         emptySpace,
@@ -89,7 +89,7 @@ class Body extends StatelessWidget {
 }
 
 class CategoresSwitcher extends StatelessWidget {
-  const CategoresSwitcher({
+  CategoresSwitcher({
     Key? key,
   }) : super(key: key);
 
@@ -150,10 +150,15 @@ class CustomAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         // emptySpace,
-        SvgPicture.asset(
-          AppImages.menuSvg,
-          width: 30,
-          height: 30,
+        GestureDetector(
+          onTap: () {
+            Get.snackbar('القائمة الجانبية', 'هذه الخاصية لا تزال تحت التطوير');
+          },
+          child: SvgPicture.asset(
+            AppImages.menuSvg,
+            width: 30,
+            height: 30,
+          ),
         ),
         SizedBox(
           width: 30,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
 import 'package:flutter_demo/core/constants/constants.dart';
+import 'package:get/get.dart';
 
 class ItemCard extends StatelessWidget {
   final String img;
@@ -39,15 +40,21 @@ class ItemCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(
-                  padding: const EdgeInsets.all(7),
-                  decoration: BoxDecoration(
-                      color: AppColor.kPrimaryColor,
-                      borderRadius: BorderRadius.circular(30)),
-                  child: const Icon(
-                    Icons.add,
-                    // size: 16,
-                  )),
+              GestureDetector(
+                onTap: () {
+                  Get.snackbar(
+                      'اضافة الي السلة', 'هذه الخاصية لا تزال تحت التطوير');
+                },
+                child: Container(
+                    padding: const EdgeInsets.all(7),
+                    decoration: BoxDecoration(
+                        color: AppColor.kPrimaryColor,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: const Icon(
+                      Icons.add,
+                      // size: 16,
+                    )),
+              ),
             ],
           )
         ],

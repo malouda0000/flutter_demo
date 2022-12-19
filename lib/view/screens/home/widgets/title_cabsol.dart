@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/constants/app_colors.dart';
-import 'package:flutter_demo/core/constants/constants.dart';
 import 'package:flutter_demo/core/shared/title_builder.dart';
+import 'package:get/get.dart';
 
 class TitleCabsol extends StatelessWidget {
   final bool isActive;
@@ -32,7 +32,11 @@ class TitleCabsol extends StatelessWidget {
         ),
       ),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          isActive
+              ? null
+              : Get.snackbar('تغير القائمة', 'هذه الخاصية لا تزال تحت التطوير');
+        },
         child: TitleBuilder(
             isBold: false,
             theTitle: theTitle,
